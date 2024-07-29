@@ -63,8 +63,16 @@ function validateLogin(userList) {
         let user = userList.find((user) => user.username === username);
         if (user.password === password) {
           document.querySelector("#loginMsg").textContent = "Login successful";
+
+          // Hide forms
+          document.querySelector(".form").style.display = "none";
+
+          // Show welcome message
+          let welcomeMessage = document.createElement("h2");
+          welcomeMessage.textContent = `Welcome, ${user.name}!`;
+          document.body.appendChild(welcomeMessage);
         } else {
-          throw new Error("Incorrect password");
+          throw new Error("Incorrect username or password");
         }
       } else {
         throw new Error("User not found");
