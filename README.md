@@ -43,7 +43,7 @@ The login form should have to following content and functionlity.
 
 5. Use error handling to validate user input. If the input fails in validation, an error message is to be displayed to the user.
 
-6. When all input is validated and approved you should store the logged in user in localStorage, hide both forms, and welcome the logged in user on the screen (For example <h1>Welcome Jesper!</h1>).
+6. When all input is validated and approved you should store the logged in user in localStorage, hide both forms, and welcome the logged in user on the screen (For example "Welcome Jesper!").
 
 I would like that you also focus on writing clean code and use decent, thought-through, stylings.
 
