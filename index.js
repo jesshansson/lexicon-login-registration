@@ -22,9 +22,9 @@ function validateRegistration(userList) {
 
       if (name.length < 2) {
         throw new Error("Name must at least contain 2 characters");
-      } else if (username.length < 6) {
+      } else if (username.length < 2) {
         throw new Error("Username must be at least 2 characters long");
-      } else if (password1.length < 8) {
+      } else if (password1.length < 4) {
         throw new Error("Password must be at least 4 characters long");
       } else if (password1 !== password2) {
         throw new Error("Passwords must match");
@@ -40,7 +40,6 @@ function validateRegistration(userList) {
         let storedUsers = JSON.parse(localStorage.getItem("userList"));
         storedUsers.push(newUser);
         localStorage.setItem("userList", JSON.stringify(storedUsers));
-        //userList.push(newUser);
         document.querySelector("#regMsg").textContent = "User created successfully";
       }
     } catch (error) {
@@ -75,20 +74,3 @@ function validateLogin(userList) {
     }
   });
 }
-
-// if (userList.some((user) => user.usename === username)) {
-//   throw new Error("Username already exists");
-// } else if (password1 !== password2) {
-//   throw new Error("Passwords do not match");
-// } else {
-//   let newUser = {
-//     name: name,
-//     username: username,
-//     email: email,
-//     password: password1,
-//   };
-//   userList.push(newUser);
-//   localStorage.setItem("registrationData", JSON.stringify(userList));
-//   document.querySelector("#regMsg").textContent = "User registered successfully";
-//   console.log(newUser);
-// }
